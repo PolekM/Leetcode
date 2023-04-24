@@ -1,7 +1,8 @@
 public class Main {
+
     public static void main(String[] args) {
-        int list [] = {1,2,2};
-        removeDuplicates(list);
+        int nums [] = {1,1,2};
+        removeDuplicates(nums);
     }
 
     public static int removeDuplicates(int[] nums) {
@@ -23,4 +24,5 @@ public class Main {
 
         return k;
     }
+
 }
