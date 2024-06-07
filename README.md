@@ -1,7 +1,7 @@
 # LeetCode Repository
 
 ## Description
-This repository contains my solutions to LeetCode problems. Each problem is described based on its number and name.
+This repository contains my solutions to LeetCode problems.
 
 ## Notes
 - Each solution is written in **Java**.
