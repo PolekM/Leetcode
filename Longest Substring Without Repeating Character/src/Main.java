@@ -1,26 +1,34 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class Main {
 
     public static void main(String[] args) {
-        lengthOfLongestSubstring("abcabcbb");
+        System.out.println(lengthOfLongestSubstring("bbbbbb"));
     }
 
     public static int lengthOfLongestSubstring(String s) {
-        String s1;
-        int longest = 0;
-        for (int j = 0; j < s.length(); j++) {
-            s1 = "";
-            for (int i = j; i < s.length(); i++) {
-                if (!s1.contains(s.charAt(i) + "")) {
-                    s1 += s.charAt(i);
-                } else {
-                    break;
-                }
-            }
-            if (s1.length() > longest) {
-                longest = s1.length();
-            }
+        int len = s.length();
+        if(len<=1){
+            return len;
         }
-        return longest;
+        int r = 1;
+        int max =0;
+        Deque<Character> deque = new LinkedList<>();
+        deque.add(s.charAt(0));
+        while(r<len){
+            char tempChar = s.charAt(r);
+            if(deque.contains(tempChar)){
+                deque.removeFirst();
+
+            }else {
+                deque.add(tempChar);
+                max = Math.max(max,deque.size());
+                r++;
+            }
+
+        }
+        return max;
     }
 
 }
